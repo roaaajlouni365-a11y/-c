@@ -45,6 +45,7 @@ namespace task
             Console.WriteLine("Bonus Marks: 5");
             Console.WriteLine($"New Average: {newAverage}");
 
+        
             // part 5 ==> Student Status
             bool passed = newAverage >= 50;
             bool adult = studentAge >= 18;
@@ -52,11 +53,11 @@ namespace task
 
             Console.WriteLine("---------Student Status--------");
             Console.WriteLine($"New Average: {newAverage}");
-            Console.WriteLine($"Passed: {passed}");
+            Console.WriteLine($"Result: {(passed ? "Passed" : "Failed")}");
             Console.WriteLine($"Adult: {adult}");
             Console.WriteLine($"Passed and Adult: {passedAndAdult}");
 
-            Console.ReadLine();
+        }
         }
     }
 }
