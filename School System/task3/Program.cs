@@ -7,55 +7,55 @@ namespace Task3
             static void Main(string[] args)
             {
             //// Part 1 ==> Guessing Game
-            //Random random = new Random();
-            //int randomNumber = random.Next(50, 76);
+            Random random = new Random();
+            int randomNumber = random.Next(50, 76);
 
-            //int guess = 0;
-            //    int attempts = 0;
-            //    int points = 0;
+            int guess = 0;
+               int attempts = 0;
+               int points = 0;
 
-            //    Console.WriteLine("===== Guessing Game =====");
+               Console.WriteLine("===== Guessing Game =====");
 
-            //    while (guess != randomNumber)
-            //    {
-            //        Console.Write("Guess a number between 50 and 75: ");
-            //        guess = Convert.ToInt32(Console.ReadLine());
+               while (guess != randomNumber)
+               {
+                   Console.Write("Guess a number between 50 and 75: ");
+                   guess = Convert.ToInt32(Console.ReadLine());
 
-            //        attempts++;
+                   attempts++;
 
-            //        if (guess < randomNumber)
-            //        {
-            //            Console.WriteLine("Try a higher number.");
-            //        }
-            //        else if (guess > randomNumber)
-            //        {
-            //            Console.WriteLine("Try a lower number.");
-            //        }
-            //        else
-            //        {
-            //            Console.WriteLine("Congratulations!");
-            //        }
-            //    }
+                   if (guess < randomNumber)
+                   {
+                       Console.WriteLine("Try a higher number.");
+                   }
+                   else if (guess > randomNumber)
+                   {
+                       Console.WriteLine("Try a lower number.");
+                   }
+                   else
+                   {
+                       Console.WriteLine("Congratulations!");
+                   }
+               }
 
-            //    if (attempts == 1)
-            //    {
-            //        points = 10;
-            //    }
-            //    else if (attempts == 2)
-            //    {
-            //        points = 7;
-            //    }
-            //    else if (attempts == 3)
-            //    {
-            //        points = 5;
-            //    }
-            //    else
-            //    {
-            //        points = 0;
-            //    }
+               if (attempts == 1)
+               {
+                   points = 10;
+               }
+               else if (attempts == 2)
+               {
+                   points = 7;
+               }
+               else if (attempts == 3)
+               {
+                   points = 5;
+               }
+               else
+               {
+                   points = 0;
+               }
 
-            //    Console.WriteLine($"Attempts: {attempts}");
-            //    Console.WriteLine($"Points: {points}");
+               Console.WriteLine($"Attempts: {attempts}");
+               Console.WriteLine($"Points: {points}");
 
 
                 // Part 2 ==> School System
