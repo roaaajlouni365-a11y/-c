@@ -1,0 +1,173 @@
+﻿            using System;
+
+namespace Task3
+    {
+        internal class Program
+        {
+            static void Main(string[] args)
+            {
+            // Part 1 ==> Guessing Game
+            Random random = new Random();
+            int randomNumber = random.Next(50, 76);
+
+            int guess = 0;
+            int attempts = 0;
+            int points = 0;
+
+            Console.WriteLine("===== Guessing Game =====");
+
+            while (guess != randomNumber)
+            {
+                Console.Write("Guess a number between 50 and 75: ");
+                guess = Convert.ToInt32(Console.ReadLine());
+
+                attempts++;
+
+                if (guess < randomNumber)
+                {
+                    Console.WriteLine("Try a higher number.");
+                }
+                else if (guess > randomNumber)
+                {
+                    Console.WriteLine("Try a lower number.");
+                }
+                else
+                {
+                    Console.WriteLine("Congratulations!");
+                }
+            }
+
+            if (attempts == 1)
+            {
+                points = 10;
+            }
+            else if (attempts == 2)
+            {
+                points = 7;
+            }
+            else if (attempts == 3)
+            {
+                points = 5;
+            }
+            else
+            {
+                points = 0;
+            }
+
+            Console.WriteLine($"Attempts: {attempts}");
+            Console.WriteLine($"Points: {points}");
+
+
+            // Part 2 ==> School System
+
+            // 1. Students Array
+            string[] studentNames = { "Roaa", "Sara", "Osama", "Lubna", "Sura" };
+
+                // 2. Student Grades
+                int[] studentGrades = { 85, 92, 68, 75, 90 };
+
+                int choice = 0;
+
+                // 5. Main Menu ==> Do While Loop
+                do
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("===== School System =====");
+                    Console.WriteLine("1. Display Students");
+                    Console.WriteLine("2. Search for Student");
+                    Console.WriteLine("3. Check Student Result");
+                    Console.WriteLine("4. Exit");
+
+                    Console.Write("Enter your choice: ");
+                    choice = Convert.ToInt32(Console.ReadLine());
+
+                    switch (choice)
+                    {
+                        case 1:
+                            // Display Students ==> For Loop
+                            Console.WriteLine("===== Students =====");
+
+                            for (int i = 0; i < studentNames.Length; i++)
+                            {
+                                Console.WriteLine(studentNames[i]);
+                            }
+
+                            // Display Grades ==> Foreach Loop
+                            Console.WriteLine("===== Student Grades =====");
+
+                            foreach (int grade in studentGrades)
+                            {
+                                Console.WriteLine(grade);
+                            }
+
+                            break;
+
+                        case 2:
+                            // 3. Search for a Student ==> While Loop
+                            Console.Write("Enter Student Name: ");
+                            string searchName = Console.ReadLine();
+
+                            int index = 0;
+                            bool found = false;
+
+                            while (index < studentNames.Length)
+                            {
+                                if (studentNames[index] == searchName)
+                                {
+                                    found = true;
+                                    Console.WriteLine("Student Found!");
+                                    break;
+                                }
+
+                                index++;
+                            }
+
+                            if (found == false)
+                            {
+                                Console.WriteLine("Student Not Found.");
+                            }
+
+                            break;
+
+                        case 3:
+                            // 4. Check Student Result ==> If / Else
+                            Console.Write("Enter Student Grade: ");
+                            int studentGrade = Convert.ToInt32(Console.ReadLine());
+
+                        if (studentGrade >= 90 && studentGrade <= 100)
+                        {
+                            Console.WriteLine("Excellent");
+                        }
+                        else if (studentGrade >= 80 && studentGrade < 90)
+                        {
+                            Console.WriteLine("Very Good");
+                        }
+                        else if (studentGrade >= 70 && studentGrade < 80)
+                        {
+                            Console.WriteLine("Good");
+                        }
+                        else if (studentGrade >= 60 && studentGrade < 70)
+                        {
+                            Console.WriteLine("Pass");
+                        }
+                        else if (studentGrade >= 0 && studentGrade < 60)
+                        {
+                            Console.WriteLine("Fail");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Grade!");
+                        }
+                            break;
+
+                        case 4:
+                            Console.WriteLine("Goodbye!");
+                            break;
+                        default:
+                            Console.WriteLine("Invalid Choice!");
+                            continue;
+                    }
+                } while (choice != 4);
+            }
+        }
+    }

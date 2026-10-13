@@ -6,7 +6,7 @@ namespace task4
     {
         static void Main(string[] args)
         {
-            Student s1 = new Student( "Roaa", 21 ,90);
+            Student s1 = new Student("Roaa", 21 ,90);
             Student s2 = new Student("Lubna", 27 ,85);
             Student s3 = new Student("Sura", 25  ,92);
 
